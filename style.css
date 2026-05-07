@@ -1363,20 +1363,42 @@ button {
     }
 
     .chat-layout {
-        grid-template-columns: 1fr;
-        height: auto;
+        display: flex;
+        flex-direction: column;
+        height: 600px;
         border-radius: 0;
+        margin: 0 -20px; /* Full width on mobile container */
     }
 
     .chat-sidebar {
-        height: 200px;
+        height: 150px;
+        flex-shrink: 0;
         overflow-y: auto;
         border-right: none;
         border-bottom: 1px solid var(--border);
     }
 
     .chat-main {
-        height: 400px;
+        flex: 1;
+        height: auto;
+        min-height: 0;
+    }
+
+    .chat-input {
+        flex-wrap: wrap;
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .chat-input input {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .chat-input .btn {
+        flex: 1;
+        padding: 10px;
+        font-size: 12px;
     }
 
     .seller-header {
