@@ -537,7 +537,7 @@ const app = {
                         
                         <div class="pdp-section">
                             <h4>Select Size</h4>
-                            <div class="size-selector">
+                            <div class="size-selector-container">
                                 ${(p.sizes || ['One Size']).map(s => `
                                     <div class="size-option ${this.state.selectedSize === s ? 'active' : ''}" 
                                          onclick="app.selectSize('${s}')">${s}</div>
