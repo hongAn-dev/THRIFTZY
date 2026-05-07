@@ -537,7 +537,7 @@ const app = {
                         
                         <div class="pdp-section">
                             <h4>Select Size</h4>
-                            <div class="size-selector-container">
+                            <div class="size-selector">
                                 ${(p.sizes || ['One Size']).map(s => `
                                     <div class="size-option ${this.state.selectedSize === s ? 'active' : ''}" 
                                          onclick="app.selectSize('${s}')">${s}</div>
@@ -590,7 +590,7 @@ const app = {
     renderWishlist() {
         const items = this.state.products.filter(p => this.state.wishlist.includes(p.id));
         this.appRoot.innerHTML = `
-            <div class="container view-header-space">
+            <div class="container" style="padding-top:60px">
                 <div class="section-title">
                     <h1 style="font-family:var(--font-serif); font-size:32px; text-transform:uppercase; letter-spacing:2px">My Wishlist</h1>
                     <p>${items.length} items saved</p>
@@ -667,7 +667,7 @@ const app = {
         }
 
         this.appRoot.innerHTML = `
-            <div class="container view-header-space">
+            <div class="container" style="padding-top:60px">
                 ${cartContent}
 
                 <!-- Order Tracking Section -->
@@ -717,9 +717,9 @@ const app = {
         const displayList = this.state.sellerTab === 'selling' ? approved : pending;
 
         this.appRoot.innerHTML = `
-            <div class="container view-header-space">
+            <div class="container" style="padding-top:60px">
                 <div class="seller-header">
-                    <div class="section-title" style="margin-bottom:0">
+                    <div class="section-title">
                         <h2>My Shop</h2>
                         <p>Manage your inventory and track sales.</p>
                     </div>
@@ -739,11 +739,11 @@ const app = {
                 </div>
 
                 <div class="product-grid">
-                    ${displayList.length === 0 ? '<p class="empty-state">No items to show.</p>' : displayList.map(p => `
+                    ${displayList.length === 0 ? '<p style="grid-column:1/-1; text-align:center; padding:40px; color:#999">No items to show.</p>' : displayList.map(p => `
                         <div class="product-card">
                             <div class="product-card__image">
                                 <img src="${p.image}" alt="${p.name}">
-                                <div class="status-badge-container">
+                                <div style="position:absolute; top:12px; right:12px">
                                     <span class="status-badge status--${p.status.toLowerCase()}">${p.status}</span>
                                 </div>
                             </div>
@@ -777,7 +777,7 @@ const app = {
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px">
                             <div class="form-group">
                                 <label>Item Name</label>
                                 <input type="text" class="form-control" name="name" placeholder="e.g. Vintage Silk Shirt" required>
@@ -788,7 +788,7 @@ const app = {
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px">
                             <div class="form-group">
                                 <label>Category</label>
                                 <select class="form-control" name="category" required>
@@ -856,7 +856,7 @@ const app = {
 
     renderOrderTracking() {
         this.appRoot.innerHTML = `
-            <div class="container view-header-space">
+            <div class="container" style="padding-top:60px">
                 <div class="section-title">
                     <h2>Order Tracking</h2>
                     <p>Manage fulfillment for your sold items.</p>
@@ -865,15 +865,15 @@ const app = {
                 <div style="max-width:900px">
                     ${this.state.orders.map(order => `
                         <div class="order-card">
-                            <img src="${order.image}" class="order-card-img">
-                            <div class="order-card-info">
-                                <span class="order-id">${order.id}</span>
-                                <h3 class="order-name">${order.productName}</h3>
-                                <p class="order-details">Buyer: ${order.customer} | $${order.price.toFixed(2)}</p>
+                            <img src="${order.image}" style="width:80px; height:80px; object-fit:cover; border-radius:4px">
+                            <div>
+                                <span style="font-size:12px; color:var(--primary); font-weight:700">${order.id}</span>
+                                <h3 style="font-size:16px; margin:4px 0">${order.productName}</h3>
+                                <p style="font-size:14px; color:var(--text-light)">Buyer: ${order.customer} | $${order.price.toFixed(2)}</p>
                             </div>
-                            <div class="order-card-status">
-                                <div class="status-badge-container">
-                                    <span class="status-badge status--pending">${order.status}</span>
+                            <div style="text-align:right">
+                                <div style="margin-bottom:8px">
+                                    <span class="status-badge" style="background:var(--primary-light); color:var(--primary)">${order.status}</span>
                                 </div>
                                 <div class="order-status-stepper">
                                     <button class="step-btn ${order.status === 'Packing' ? 'current' : ''}" onclick="app.updateOrderStatus('${order.id}', 'Packing')">Packing</button>
@@ -957,7 +957,7 @@ const app = {
         this.state.currentChat = activeChat;
 
         this.appRoot.innerHTML = `
-            <div class="container view-header-space">
+            <div class="container" style="padding-top:60px">
                 <div class="section-title">
                     <h2>Messages</h2>
                     <p>Chat with potential buyers.</p>
@@ -967,8 +967,8 @@ const app = {
                     <div class="chat-sidebar">
                         ${this.state.chats.map(chat => `
                             <div class="chat-contact ${activeChat.id === chat.id ? 'active' : ''}" onclick="app.selectChat(${chat.id})">
-                                <div style="font-weight:600">${chat.name}</div>
-                                <div style="font-size:12px; color:var(--text-light); white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                                <div class="chat-contact-name">${chat.name}</div>
+                                <div class="chat-contact-last">
                                     ${chat.lastMsg}
                                 </div>
                             </div>
