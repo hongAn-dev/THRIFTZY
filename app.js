@@ -590,7 +590,7 @@ const app = {
     renderWishlist() {
         const items = this.state.products.filter(p => this.state.wishlist.includes(p.id));
         this.appRoot.innerHTML = `
-            <div class="container" style="padding-top:60px">
+            <div class="container view-header-space">
                 <div class="section-title">
                     <h1 style="font-family:var(--font-serif); font-size:32px; text-transform:uppercase; letter-spacing:2px">My Wishlist</h1>
                     <p>${items.length} items saved</p>
@@ -667,7 +667,7 @@ const app = {
         }
 
         this.appRoot.innerHTML = `
-            <div class="container" style="padding-top:60px">
+            <div class="container view-header-space">
                 ${cartContent}
 
                 <!-- Order Tracking Section -->
@@ -717,7 +717,7 @@ const app = {
         const displayList = this.state.sellerTab === 'selling' ? approved : pending;
 
         this.appRoot.innerHTML = `
-            <div class="container" style="padding-top:60px">
+            <div class="container view-header-space">
                 <div class="seller-header">
                     <div class="section-title" style="margin-bottom:0">
                         <h2>My Shop</h2>
@@ -856,7 +856,7 @@ const app = {
 
     renderOrderTracking() {
         this.appRoot.innerHTML = `
-            <div class="container" style="padding-top:60px">
+            <div class="container view-header-space">
                 <div class="section-title">
                     <h2>Order Tracking</h2>
                     <p>Manage fulfillment for your sold items.</p>
@@ -957,7 +957,7 @@ const app = {
         this.state.currentChat = activeChat;
 
         this.appRoot.innerHTML = `
-            <div class="container" style="padding-top:60px">
+            <div class="container view-header-space">
                 <div class="section-title">
                     <h2>Messages</h2>
                     <p>Chat with potential buyers.</p>
