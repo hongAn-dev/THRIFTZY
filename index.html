@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THRIFTZY | Premium Thrift Fashion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" onclick="app.navigate('home')">Home</a>
+                <a href="#" onclick="app.navigate('collection')">Shop</a>
+                <a href="#" onclick="app.navigate('cart')">Tracking</a>
+                <a href="#" onclick="app.navigate('seller-dashboard')">Seller</a>
+            </nav>
+            <a href="#" class="logo" onclick="app.navigate('home')">THRIFTZY</a>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Search" onclick="app.toggleSearch()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <button class="icon-btn" aria-label="Wishlist" onclick="app.navigate('wishlist')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.84-8.84 1.06-1.06a5.5 5.5 0 0 0 0-7.78v0z"></path></svg>
+                </button>
+                <button class="icon-btn cart-trigger" aria-label="Cart" onclick="app.navigate('cart')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="search-overlay" class="search-overlay">
+        <div class="search-overlay__content">
+            <button class="search-overlay__close" onclick="app.toggleSearch()">&times;</button>
+            <input type="text" id="search-input" placeholder="Search designers, products, categories..." oninput="app.handleSearchInput(event)">
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </div>
+
+    <main id="app-root">
+        <!-- Views will be injected here -->
+    </main>
+
+    <!-- Floating Action Button for Seller -->
+    <button class="fab" onclick="app.navigate('post-form')" aria-label="Post Item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </button>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <div class="footer__brand">
+                <div class="footer__logo">THRIFTZY</div>
+                <p>Premium curation of pre-loved high fashion. Authentic, sustainable, and intentionally designed.</p>
+            </div>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <h4>Shop</h4>
+                    <a href="#" onclick="app.navigate('collection')">New Arrivals</a>
+                    <a href="#" onclick="app.navigate('collection')">Designer Bags</a>
+                    <a href="#" onclick="app.navigate('collection')">Vintage Shoes</a>
+                    <a href="#" onclick="app.navigate('collection')">Archive Apparel</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Support</h4>
+                    <a href="#">Shipping & Returns</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">TikTok</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>&copy; 2026 THRIFTZY. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
