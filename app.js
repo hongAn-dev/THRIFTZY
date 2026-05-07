@@ -528,15 +528,15 @@ const app = {
             <div class="container">
                 <div class="pdp-layout">
                     <div class="pdp-gallery">
-                        <img src="${p.image}" alt="${p.name}" style="width:100%; aspect-ratio:3/4; object-fit:cover">
+                        <img src="${p.image}" alt="${p.name}">
                     </div>
                     <div class="pdp-info-sticky">
                         <div class="pdp-designer">${p.designer || 'Vibe Luxury'}</div>
                         <h1 class="pdp-name">${p.name}</h1>
                         <p class="pdp-price">$${p.price.toFixed(2)}</p>
                         
-                        <div style="margin-bottom:30px">
-                            <h4 style="font-size:12px; text-transform:uppercase; margin-bottom:10px">Select Size</h4>
+                        <div class="pdp-section">
+                            <h4>Select Size</h4>
                             <div class="size-selector">
                                 ${(p.sizes || ['One Size']).map(s => `
                                     <div class="size-option ${this.state.selectedSize === s ? 'active' : ''}" 
@@ -545,9 +545,9 @@ const app = {
                             </div>
                         </div>
 
-                        <div style="display:flex; gap:20px; margin-bottom:40px">
-                            <button class="btn btn--primary" style="flex:1" onclick="app.addToCart(${p.id})">Add To Bag</button>
-                            <button class="wishlist-btn ${isWishlisted ? 'active' : ''}" style="position:static; width:50px; height:50px" onclick="app.toggleWishlist(${p.id})">
+                        <div class="pdp-actions">
+                            <button class="btn btn--primary" onclick="app.addToCart(${p.id})">Add To Bag</button>
+                            <button class="wishlist-btn ${isWishlisted ? 'active' : ''}" onclick="app.toggleWishlist(${p.id})">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.84-8.84 1.06-1.06a5.5 5.5 0 0 0 0-7.78v0z"></path>
                                 </svg>
@@ -556,24 +556,28 @@ const app = {
 
                         <div class="pdp-details">
                             <details open>
-                                <summary style="font-weight:700; padding:15px 0; border-top:1px solid var(--border); list-style:none; cursor:pointer; display:flex; justify-content:space-between">
+                                <summary>
                                     Description <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </summary>
-                                <p style="padding-bottom:20px; font-size:14px; color:var(--text-light)">${p.description}</p>
+                                <div class="details-content">
+                                    <p>${p.description}</p>
+                                </div>
                             </details>
                             <details>
-                                <summary style="font-weight:700; padding:15px 0; border-top:1px solid var(--border); list-style:none; cursor:pointer; display:flex; justify-content:space-between">
+                                <summary>
                                     Size & Fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </summary>
-                                <p style="padding-bottom:20px; font-size:14px; color:var(--text-light)">Fits true to size. For more information, please review the size guide.</p>
+                                <div class="details-content">
+                                    <p>Fits true to size. For more information, please review the size guide.</p>
+                                </div>
                             </details>
                         </div>
                     </div>
                 </div>
 
-                <section style="margin-top:100px; padding-bottom:100px">
-                    <div class="section-title" style="text-align:center">
-                        <h2 style="font-family:var(--font-serif); font-size:24px; text-transform:uppercase">You May Also Like</h2>
+                <section class="related-products">
+                    <div class="section-title">
+                        <h2>You May Also Like</h2>
                     </div>
                     <div class="product-grid">
                         ${this.state.products.slice(0, 4).map(p => this.createProductCard(p)).join('')}
@@ -619,46 +623,44 @@ const app = {
 
         if (this.state.cart.length > 0) {
             cartContent = `
-                <div style="display:grid; grid-template-columns: 1fr 350px; gap:60px">
+                <div class="cart-layout">
                     <div>
-                        <h2 style="font-family:var(--font-serif); font-size:32px; margin-bottom:40px">Shopping Bag</h2>
-                        <div style="display:grid; gap:30px">
+                        <h2 class="cart-title">Shopping Bag</h2>
+                        <div class="cart-items-list">
                             ${this.state.cart.map((item, index) => `
-                                <div style="display:flex; gap:20px; padding-bottom:30px; border-bottom:1px solid var(--border)">
-                                    <img src="${item.image}" style="width:120px; height:160px; object-fit:cover; background:#f9f9f9">
-                                    <div style="flex:1">
-                                        <div style="display:flex; justify-content:space-between; align-items:flex-start">
+                                <div class="cart-item">
+                                    <img src="${item.image}" alt="${item.name}">
+                                    <div class="cart-item-info">
+                                        <div class="cart-item-header">
                                             <div>
-                                                <h3 style="font-size:18px; margin-bottom:4px">${item.name}</h3>
-                                                <p style="color:var(--text-light); font-size:14px">${item.designer}</p>
-                                                <p style="margin-top:10px; font-size:14px">Size: ${item.selectedSize || 'One Size'}</p>
+                                                <h3 class="cart-item-name">${item.name}</h3>
+                                                <p class="cart-item-designer">${item.designer}</p>
+                                                <p class="cart-item-size">Size: ${item.selectedSize || 'One Size'}</p>
                                             </div>
-                                            <button onclick="app.removeFromCart(${index})" style="color:var(--text-light); font-size:12px; text-transform:uppercase; font-weight:700">Remove</button>
+                                            <button class="remove-btn" onclick="app.removeFromCart(${index})">Remove</button>
                                         </div>
-                                        <p style="margin-top:20px; font-weight:700">$${item.price.toFixed(2)}</p>
+                                        <p class="cart-item-price">$${item.price.toFixed(2)}</p>
                                     </div>
                                 </div>
                             `).join('')}
                         </div>
                     </div>
 
-                    <aside>
-                        <div style="background:#f9f9f9; padding:40px">
-                            <h3 style="font-family:var(--font-serif); font-size:20px; margin-bottom:24px">Order Summary</h3>
-                            <div class="summary-row" style="display:flex; justify-content:space-between; margin-bottom:16px; font-size:14px">
-                                <span>Subtotal</span>
-                                <span>$${total.toFixed(2)}</span>
-                            </div>
-                            <div class="summary-row" style="display:flex; justify-content:space-between; margin-bottom:16px; font-size:14px">
-                                <span>Shipping</span>
-                                <span>Complimentary</span>
-                            </div>
-                            <div class="summary-row total" style="display:flex; justify-content:space-between; margin-top:24px; padding-top:24px; border-top:1px solid var(--border); font-weight:700; font-size:18px">
-                                <span>Total</span>
-                                <span>$${total.toFixed(2)}</span>
-                            </div>
-                            <button class="btn btn--primary" style="width:100%; margin-top:24px" onclick="app.handleCheckout()">Proceed to Checkout</button>
+                    <aside class="cart-summary">
+                        <h3 class="summary-title">Order Summary</h3>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$${total.toFixed(2)}</span>
                         </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>Complimentary</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>$${total.toFixed(2)}</span>
+                        </div>
+                        <button class="btn btn--primary" style="width:100%; margin-top:24px" onclick="app.handleCheckout()">Proceed to Checkout</button>
                     </aside>
                 </div>
             `;
