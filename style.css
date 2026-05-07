@@ -622,9 +622,87 @@ button {
     border-top: 1px solid var(--border);
     font-weight: 700;
     font-size: 18px;
+/* Seller UI */
+.seller-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
-.size-option {
+.seller-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.status-badge-container {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.empty-state {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 60px;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* Order Tracking */
+.order-card {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 24px;
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.order-card-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.order-id {
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.order-name {
+    font-size: 16px;
+    margin: 4px 0;
+}
+
+.order-details {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.order-card-status {
+    text-align: right;
+}
+
+.order-card-status .status-badge-container {
+    position: static;
+    margin-bottom: 8px;
+}
+
+.order-status-stepper {
+    display: flex;
+    gap: 8px;
+}
     border: 1px solid var(--border);
     padding: 12px;
     text-align: center;
@@ -1287,16 +1365,59 @@ button {
     .chat-layout {
         grid-template-columns: 1fr;
         height: auto;
+        border-radius: 0;
     }
 
     .chat-sidebar {
-        display: none;
+        height: 200px;
+        overflow-y: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
     }
-    
+
+    .chat-main {
+        height: 400px;
+    }
+
+    .seller-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .seller-actions {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .seller-actions .btn {
+        flex: 1;
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
     .order-card {
         grid-template-columns: 60px 1fr;
-        padding: 15px;
         gap: 15px;
+        padding: 15px;
+    }
+
+    .order-card-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .order-card-status {
+        grid-column: 1 / -1;
+        text-align: left;
+        margin-top: 10px;
+        padding-top: 15px;
+        border-top: 1px solid var(--border);
     }
 
     .order-status-stepper {
