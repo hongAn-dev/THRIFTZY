@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THRIFTZY | Premium Thrift Fashion</title>
+    <title>THRIFTZY | Retro Thrift & Sustainable Fashion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,21 +15,55 @@
             <nav class="nav">
                 <a href="#" onclick="app.navigate('home')">Home</a>
                 <a href="#" onclick="app.navigate('collection')">Shop</a>
-                <a href="#" onclick="app.navigate('cart')">Tracking</a>
+                <a href="#" onclick="app.navigate('buyer-tracking')">Tracking</a>
                 <a href="#" onclick="app.navigate('seller-dashboard')">Seller</a>
             </nav>
-            <a href="#" class="logo" onclick="app.navigate('home')">THRIFTZY</a>
-            <div class="header-actions">
-                <button class="icon-btn" aria-label="Search" onclick="app.toggleSearch()">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </button>
-                <button class="icon-btn" aria-label="Wishlist" onclick="app.navigate('wishlist')">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.84-8.84 1.06-1.06a5.5 5.5 0 0 0 0-7.78v0z"></path></svg>
-                </button>
-                <button class="icon-btn cart-trigger" aria-label="Cart" onclick="app.navigate('cart')">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                    <span class="cart-count">0</span>
-                </button>
+            
+            <!-- STYLIZED THRIFTZY STYLE LOGO -->
+            <div class="logo-container" onclick="app.navigate('home')">
+                <svg viewBox="0 0 300 100" class="thriftzy-logo">
+                    <!-- Top Star -->
+                    <path d="M150,5 L153,15 L164,15 L155,21 L159,31 L150,25 L141,31 L145,21 L136,15 L147,15 Z" fill="#F3CDDC" stroke="#000" stroke-width="2"/>
+                    <!-- THRIFTZY bubble outline shadow -->
+                    <text x="153" y="60" font-family="'Lexend Exa', sans-serif" font-size="30" font-weight="900" text-anchor="middle" fill="#000" letter-spacing="1">THRIFTZY</text>
+                    <!-- THRIFTZY bubble text -->
+                    <text x="150" y="57" font-family="'Lexend Exa', sans-serif" font-size="30" font-weight="900" text-anchor="middle" fill="#FCF6FA" stroke="#000" stroke-width="2" paint-order="stroke fill" letter-spacing="1">THRIFTZY</text>
+                    <!-- Banner for STYLE -->
+                    <rect x="90" y="68" width="120" height="22" rx="4" fill="#000" stroke="#FCF6FA" stroke-width="1.5"/>
+                    <text x="150" y="84" font-family="'Lexend Exa', sans-serif" font-size="11" font-weight="800" text-anchor="middle" fill="#F3CDDC" letter-spacing="2">STYLE</text>
+                    <!-- Stars beside banner -->
+                    <path d="M75,74 L77,79 L82,79 L78,82 L80,87 L75,84 L70,87 L72,82 L68,79 L73,79 Z" fill="#F3CDDC" stroke="#000" stroke-width="1"/>
+                    <path d="M225,74 L227,79 L232,79 L228,82 L230,87 L225,84 L220,87 L222,82 L218,79 L223,79 Z" fill="#F3CDDC" stroke="#000" stroke-width="1"/>
+                </svg>
+            </div>
+
+            <!-- HEADER RIGHT-HAND GROUP (GROUPS SEARCH & ACTIONS) -->
+            <div class="header-right">
+                <!-- HEADER SEARCH BAR (PINK BACKGROUND) -->
+                <div class="header-search-container">
+                    <input type="text" id="header-search-input" placeholder="THANH TÌM KIẾM..." oninput="app.handleHeaderSearchInput(event)">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <div id="header-search-results" class="header-search-results"></div>
+                </div>
+
+                <div class="header-actions">
+                    <!-- RETRO PINK HEART ICON -->
+                    <button class="icon-btn" aria-label="Wishlist" onclick="app.navigate('wishlist')">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#F3CDDC" stroke="#000" stroke-width="2" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </button>
+                    <!-- RETRO PINK CART ICON -->
+                    <button class="icon-btn cart-trigger" aria-label="Cart" onclick="app.navigate('cart')">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#F3CDDC" stroke="#000" stroke-width="2" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1.5" fill="#000"/>
+                            <circle cx="20" cy="21" r="1.5" fill="#000"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" fill="none" stroke="#000" stroke-width="2"/>
+                            <path d="M9 8h10v3H9z" fill="#F3CDDC" stroke="#000" stroke-width="1.5"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>

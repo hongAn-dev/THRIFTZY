@@ -6,56 +6,18 @@ const app = {
         orders: [], // Ensure empty initialization
         wishlist: [],
         products: [
-            { id: 1, designer: 'Maison Luxe', name: 'Signature Leather Tote', price: 850, category: 'Bags', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', description: 'Timeless luxury tote in premium calfskin.', sizes: ['One Size'] },
-            { id: 2, designer: 'Maison Luxe', name: 'Heritage Shoulder Bag', price: 980, category: 'Bags', image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80', description: 'Iconic silhouette with gold-tone hardware.', sizes: ['One Size'] },
-            { id: 3, designer: 'Maison Luxe', name: 'Sleek Crossbody Purse', price: 560, category: 'Bags', image: 'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&q=80', description: 'Minimalist design for the modern curator.', sizes: ['One Size'] },
-            { id: 4, designer: 'Maison Luxe', name: 'Structured Top Handle Bag', price: 1100, category: 'Bags', image: 'https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=800&q=80', description: 'Sophisticated structure in pebbled leather.', sizes: ['One Size'] },
-            { id: 5, designer: 'Maison Luxe', name: 'Mini Satchel', price: 450, category: 'Bags', image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80', description: 'Compact and stylish for light travel.', sizes: ['One Size'] },
-            { id: 6, designer: 'Maison Luxe', name: 'Plaid Pattern Handbag', price: 1250, category: 'Bags', image: 'https://images.unsplash.com/photo-1524289286702-f07229da36f5?auto=format&fit=crop&w=800&q=80', description: 'Iconic plaid with premium leather trim.', sizes: ['One Size'] },
-            { id: 7, designer: 'Maison Luxe', name: 'Vibrant Yellow Clutch', price: 380, category: 'Bags', image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80', description: 'Iconic silhouette with gold-tone hardware.', description: 'A pop of color for your evening ensemble.', sizes: ['One Size'] },
-            { id: 8, designer: 'Maison Luxe', name: 'Editorial Handbag', price: 1350, category: 'Bags', image: 'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&q=80', description: 'As seen in the heritage archive editorials.', sizes: ['One Size'] },
-            { id: 9, designer: 'Maison Luxe', name: 'Color-Block Tote', price: 790, category: 'Bags', image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80', description: 'Modern black and white leather construction.', sizes: ['One Size'] },
-            { id: 10, designer: 'Maison Luxe', name: 'Designer Satchel', price: 1100, category: 'Bags', image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80', description: 'High-end structure with ample space.', sizes: ['One Size'] },
-            { id: 11, designer: 'Aura Silk', name: 'Silk Editorial Gown', price: 1200, category: 'Apparel', image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80', description: 'Flowing silk gown for high-fashion statements.', sizes: ['S', 'M', 'L'] },
-            { id: 12, designer: 'Aura Silk', name: 'Velvet Evening Dress', price: 890, category: 'Apparel', image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80', description: 'Deep velvet textures for elegant evenings.', sizes: ['S', 'M'] },
-            { id: 13, designer: 'Aura Silk', name: 'Floral Silk Blouse', price: 340, category: 'Apparel', image: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=80', description: 'Intricate floral patterns on pure silk.', sizes: ['M', 'L'] },
-            { id: 14, designer: 'Aura Silk', name: 'Classic Trench Coat', price: 950, category: 'Apparel', image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80', description: 'The essential archive piece.', sizes: ['M', 'L', 'XL'] },
-            { id: 15, designer: 'Aura Silk', name: 'Cashmere Oversized Sweater', price: 420, category: 'Apparel', image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80', description: 'Iconic silhouette with gold-tone hardware.', description: 'Ultra-soft cashmere for cold luxury.', sizes: ['Freesize'] },
-            { id: 16, designer: 'Aura Silk', name: 'Black Luxury Dress', price: 1400, category: 'Apparel', image: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80', description: 'The ultimate little black dress for the archive.', sizes: ['S', 'M', 'L'] },
-            { id: 17, designer: 'Aura Silk', name: 'Embellished Abaya', price: 1600, category: 'Apparel', image: 'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=800&q=80', description: 'Intricate silver work on premium dark fabric.', sizes: ['S', 'M', 'L', 'XL'] },
-            { id: 18, designer: 'Aura Silk', name: 'Lace Evening Gown', price: 2200, category: 'Apparel', image: 'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=800&q=80', description: 'Delicate lace work on a stunning green silhouette.', sizes: ['S', 'M'] },
-            { id: 19, designer: 'Aura Silk', name: 'Silk Midi Skirt', price: 480, category: 'Apparel', image: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=800&q=80', description: 'Lustrous finish with a bias-cut drape.', sizes: ['S', 'M', 'L'] },
-            { id: 20, designer: 'Aura Silk', name: 'Editorial Fur Coat', price: 3500, category: 'Apparel', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80', description: 'Luxurious fur for ultimate high-fashion warmth.', sizes: ['M', 'L'] },
-            { id: 21, designer: 'Step Noir', name: 'Classic Leather Loafers', price: 420, category: 'Shoes', image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80', description: 'Handcrafted leather loafers with a polished finish.', sizes: ['38', '39', '40', '41', '42'] },
-            { id: 22, designer: 'Step Noir', name: 'Editorial Stilettos', price: 650, category: 'Shoes', image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80', description: 'Sharp lines and premium craftsmanship.', sizes: ['36', '37', '38', '39'] },
-            { id: 23, designer: 'Step Noir', name: 'Minimalist White Sneakers', price: 290, category: 'Shoes', image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80', description: 'Clean aesthetic for daily luxury wear.', sizes: ['40', '41', '42', '43', '44'] },
-            { id: 24, designer: 'Step Noir', name: 'Patent Leather Pumps', price: 580, category: 'Shoes', image: 'https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?auto=format&fit=crop&w=800&q=80', description: 'High-shine finish for formal elegance.', sizes: ['37', '38', '39'] },
-            { id: 25, designer: 'Step Noir', name: 'Suede Ankle Boots', price: 720, category: 'Shoes', image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80', description: 'Premium suede with a modern silhouette.', sizes: ['39', '40', '41', '42'] },
-            { id: 26, designer: 'Step Noir', name: 'Wingtip Oxford Shoes', price: 480, category: 'Shoes', image: 'https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?auto=format&fit=crop&w=800&q=80', description: 'Classic wingtip design in rich mahogany leather.', sizes: ['41', '42', '43'] },
-            { id: 27, designer: 'Step Noir', name: 'Sparkling High Heels', price: 820, category: 'Shoes', image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80', description: 'Bow detailing with shimmering crystal finish.', sizes: ['36', '37', '38'] },
-            { id: 28, designer: 'Step Noir', name: 'Leather Loafers', price: 410, category: 'Shoes', image: 'https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&q=80', description: 'Daily essential in premium black leather.', sizes: ['40', '41', '42', '43'] },
-            { id: 29, designer: 'Step Noir', name: 'Two-Tone Dress Shoes', price: 540, category: 'Shoes', image: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80', description: 'Bold black and red leather for a statement.', sizes: ['42', '43', '44'] },
-            { id: 30, designer: 'Step Noir', name: 'Suede Loafers', price: 450, category: 'Shoes', image: 'https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=800&q=80', description: 'Softest suede in a timeless design.', sizes: ['39', '40', '41', '42'] },
-            { id: 31, designer: 'Aurum', name: 'Chronograph Timepiece', price: 2100, category: 'Accessories', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80', description: 'Precision engineered luxury watch in gold and steel.', sizes: ['One Size'] },
-            { id: 32, designer: 'Aurum', name: 'Diamond Link Bracelet', price: 1500, category: 'Accessories', image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80', description: 'Sparkling diamond accents on 18k gold links.', sizes: ['One Size'] },
-            { id: 33, designer: 'Aurum', name: 'Vintage Gold Necklace', price: 1200, category: 'Accessories', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80', description: 'A timeless piece from the heritage collection.', sizes: ['One Size'] },
-            { id: 34, designer: 'Aurum', name: 'Sapphire Drop Earrings', price: 890, category: 'Accessories', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80', description: 'Deep blue sapphires in white gold setting.', sizes: ['One Size'] },
-            { id: 35, designer: 'Aurum', name: 'Silver Chrono Watch', price: 1800, category: 'Accessories', image: 'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=80', description: 'Sophisticated engineering in brushed steel.', sizes: ['One Size'] },
-            { id: 36, designer: 'Aurum', name: 'Gold Signet Ring', price: 750, category: 'Accessories', image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80', description: 'Iconic silhouette with gold-tone hardware.', description: 'Bold signet ring in solid 14k gold.', sizes: ['7', '8', '9', '10'] },
-            { id: 37, designer: 'Aurum', name: 'Cartier Style Watch', price: 3200, category: 'Accessories', image: 'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80', description: 'Classic elegance with a leather strap.', sizes: ['One Size'] },
-            { id: 38, designer: 'Aurum', name: 'Gemstone Bib Necklace', price: 1800, category: 'Accessories', image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80', description: 'Ornate colors and masterful gem setting.', sizes: ['One Size'] },
-            { id: 39, designer: 'Aurum', name: 'Gold Heart Pendant', price: 340, category: 'Accessories', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80', description: 'Elegant gold heart with silver accents.', sizes: ['One Size'] },
-            { id: 40, designer: 'Aurum', name: 'Diamond Stud Earrings', price: 2800, category: 'Accessories', image: 'https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=800&q=80', description: 'Brilliant cut diamonds in platinum setting.', sizes: ['One Size'] },
-            { id: 41, designer: 'Step Noir', name: 'Archive Desert Boots', price: 450, category: 'Shoes', image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80', description: 'Timeless desert boots in premium tan suede.', sizes: ['40', '41', '42', '43'] },
-            { id: 42, designer: 'Aura Silk', name: 'Monochrome Knit Sweater', price: 320, category: 'Apparel', image: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&q=80', description: 'Heavyweight wool knit for a structural silhouette.', sizes: ['S', 'M', 'L'] },
-            { id: 43, designer: 'Maison Luxe', name: 'Crocodile Effect Bag', price: 2100, category: 'Bags', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', description: 'Embossed leather with a high-shine finish.', sizes: ['One Size'] },
-            { id: 44, designer: 'Aurum', name: 'Onyx Signet Ring', price: 680, category: 'Accessories', image: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80', description: 'Deep black onyx set in sterling silver.', sizes: ['8', '9', '10'] },
-            { id: 45, designer: 'Aura Silk', name: 'Tailored Wool Trousers', price: 550, category: 'Apparel', image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=80', description: 'Sharp pleats and a relaxed drape in virgin wool.', sizes: ['30', '32', '34'] },
-            { id: 46, designer: 'Step Noir', name: 'Velvet Evening Slippers', price: 890, category: 'Shoes', image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80', description: 'Embroidered velvet for formal luxury.', sizes: ['41', '42', '43'] },
-            { id: 47, designer: 'Maison Luxe', name: 'Duffle Weekender', price: 1450, category: 'Bags', image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80', description: 'Spacious travel essential in canvas and leather.', sizes: ['One Size'] },
-            { id: 48, designer: 'Aurum', name: 'Moon Phase Watch', price: 4200, category: 'Accessories', image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80', description: 'Complex mechanical movement with stellar design.', sizes: ['One Size'] },
-            { id: 49, designer: 'Aura Silk', name: 'Sheer Organza Blouse', price: 480, category: 'Apparel', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80', description: 'Light-as-air fabric for layered editorials.', sizes: ['S', 'M'] },
-            { id: 50, designer: 'Step Noir', name: 'Chelsea Archive Boots', price: 780, category: 'Shoes', image: 'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?auto=format&fit=crop&w=800&q=80', description: 'Iconic silhouette in polished calfskin.', sizes: ['40', '41', '42', '43'] }
+            { id: 1, designer: 'Y2K Archival', name: 'Brown Lace Cami Blouse', price: 12.00, category: 'Apparel', image: 'https://i.postimg.cc/nhBhHmZd/a9a50ce2-eccb-4a82-a4f2-672c22cf18e8.jpg', description: 'Áo ren nâu phối viền kem phong cách Y2K, form ôm nhẹ tôn dáng. Chất vải co giãn tốt, phù hợp mặc đi chơi hoặc phối layer (125.000đ).', sizes: ['S-M'], faults: ['9/10, chỉ có vài dấu xù lông nhẹ không đáng kể.'] },
+            { id: 2, designer: 'Vintage Clubwear', name: 'Shimmering Black A-Line Dress', price: 24.00, category: 'Apparel', image: 'https://i.postimg.cc/TYHtRyQX/baa34b38-c722-4518-9a45-b5c5dfb98fd8.jpg', description: 'Đầm đen ánh nhũ nhẹ, form ôm chữ A nữ tính, phù hợp đi tiệc hoặc chụp ảnh. Chất liệu mềm, lên form đẹp (235.000đ).', sizes: ['M'], faults: ['9/10, nhũ vẫn còn đẹp, có vài nếp gấp nhẹ do bảo quản.'] },
+            { id: 3, designer: 'Linen Studio', name: 'Ashen Linen Halter Dress', price: 18.00, category: 'Apparel', image: 'https://i.postimg.cc/cJHvmHwB/59ac4af8-c980-438c-adf7-f6824666df2a.jpg', description: 'Váy cổ yếm chất liệu linen màu xám tro cá tính. Thiết kế thân áo ôm sát kết hợp tùng váy xếp tầng xòe nhẹ, điểm xuyết viền ren tua rua lạ mắt (180.000đ).', sizes: ['S'], faults: ['9.5/10, form dáng còn rất cứng cáp, vải linen đứng dáng.'] },
+            { id: 4, designer: 'Denim Archive', name: 'Embroidered Denim Halter Dress', price: 21.00, category: 'Apparel', image: 'https://i.postimg.cc/MZyp1Rgn/add3a0e5-f3ea-48fd-812d-36d4abd803f8.jpg', description: 'Đầm jean cổ yếm phong cách vintage Y2K, phối chi tiết thêu nổi bật ở phần ngực. Form ôm eo và chân váy xòe nhẹ (210.000đ).', sizes: ['S'], faults: ['8.5/10, màu jean còn đẹp, có bạc màu nhẹ tự nhiên ở vài đường may.'] },
+            { id: 5, designer: 'Retro Polka', name: 'Polka Dot Babydoll Slip Dress', price: 19.50, category: 'Apparel', image: 'https://i.postimg.cc/8cDDZKxk/0e1107ab-4489-4a66-97d1-a4a2451b8a47.jpg', description: 'Đầm hai dây chấm bi đen trắng, form babydoll rộng nhẹ, mặc thoải mái và dễ phối phụ kiện. Vải mỏng nhẹ phù hợp mùa hè (195.000đ).', sizes: ['M', 'L'], faults: ['9/10, có vài nếp nhăn nhẹ do gấp đồ nhưng không ảnh hưởng form.'] },
+            { id: 6, designer: 'Street Denim', name: 'Light Wash Flared Jeans', price: 24.50, category: 'Apparel', image: 'https://i.postimg.cc/qvgrDCD1/cc11c067-afd2-4ccf-807b-2e2a988e42b3.jpg', description: 'Quần jeans ống loe nhẹ màu xanh sáng, wash nhẹ ở đùi tạo hiệu ứng chân dài (245.000đ).', sizes: ['M', '27-28', 'eo 56-58'], faults: ['9/10, gấu quần và đường may còn nguyên vẹn, không lỗi.'] },
+            { id: 7, designer: 'Striped Chic', name: 'Red & White Striped Halter Top', price: 13.50, category: 'Apparel', image: 'https://i.postimg.cc/fyB4Bwxp/c4613ee8-8a19-460f-bdc9-1f61ad44c414.jpg', description: 'Áo cổ yếm họa tiết kẻ ngang đỏ trắng nổi bật. Thiết kế vắt chéo ngực tôn vòng một, chất thun co giãn ôm body cực tốt (135.000đ).', sizes: ['S', 'M'], faults: ['10/10, độ mới cao, màu sắc còn rất tươi.'] },
+            { id: 8, designer: 'Retro Denim', name: 'Seamed Dark Wash Flared Jeans', price: 22.50, category: 'Apparel', image: 'https://i.postimg.cc/hGxHN8Lj/a6aea241-d8ab-4154-8e7e-3d6c9429a2ff.jpg', description: 'Quần jeans ống loe màu xanh đậm với đường gân dọc thân quần độc đáo (225.000đ).', sizes: ['M', '28-29', 'eo 57-59'], faults: ['8/10, ống quần có vết sứt nhẹ.'] },
+            { id: 9, designer: 'Flora Slip', name: 'Chocolate Floral Slip Dress', price: 18.50, category: 'Apparel', image: 'https://i.postimg.cc/Gh26bnFz/62a2c4bc-9249-47d8-8163-7bb25f729e2c.jpg', description: 'Váy hai dây màu nâu chocolate họa tiết hoa nhí trắng tinh tế. Có dây rút điều chỉnh ở eo và viền ren ở ngực (185.000đ).', sizes: ['S', 'M'], faults: ['9.5/10, mặt vải mịn mát, không nhăn.'] },
+            { id: 10, designer: 'Earth Tone', name: 'Olive Ruched Halter Top', price: 14.50, category: 'Apparel', image: 'https://i.postimg.cc/rmMYbBy9/9b8f1a4f-c025-437e-be00-1b16de25a310.jpg', description: 'Áo cổ yếm màu xanh olive với phần bo chun ở eo tôn dáng (145.000đ).', sizes: ['Freesize'], faults: ['8/10, phai màu nhẹ.'] },
+            { id: 11, designer: 'Vintage Denim', name: 'Classic Wash Flared Jeans', price: 25.00, category: 'Apparel', image: 'https://i.postimg.cc/WbCYjFbm/f93c01e8-ddd6-47e6-9c13-9b5b91ddfdae.jpg', description: 'Quần jeans ống loe cơ bản màu xanh cổ điển. Form dáng ôm mông và đùi, loe rộng từ đầu gối (250.000đ).', sizes: ['S-M', '26-27', 'eo 55-57'], faults: ['9/10, màu wash tự nhiên, form quần cực chuẩn.'] },
+            { id: 12, designer: 'Lingerie Archive', name: 'Black Lace Satin Slip Dress', price: 16.50, category: 'Apparel', image: 'https://i.postimg.cc/qR1QFg5J/bdb98908-291f-4d99-ac7d-2257e0f4da80.jpg', description: 'Đầm ngủ/Slip dress phối ren đen quyến rũ (165.000đ).', sizes: ['S-M'], faults: ['9.5/10, ren còn nguyên không bị rút sợi.'] }
         ],
         currentProduct: null,
         selectedSize: null,
@@ -121,9 +83,9 @@ const app = {
         }
 
         const filtered = this.state.products.filter(p =>
-            p.name.toLowerCase().includes(query) ||
-            p.designer.toLowerCase().includes(query) ||
-            p.category.toLowerCase().includes(query)
+            (p.name || '').toLowerCase().includes(query) ||
+            (p.designer || '').toLowerCase().includes(query) ||
+            (p.category || '').toLowerCase().includes(query)
         ).slice(0, 6);
 
         resultsContainer.innerHTML = filtered.map(p => `
@@ -136,6 +98,41 @@ const app = {
                 </div>
             </div>
         `).join('');
+    },
+
+    handleHeaderSearchInput(e) {
+        const query = e.target.value.toLowerCase();
+        const resultsContainer = document.getElementById('header-search-results');
+
+        if (query.length < 2) {
+            resultsContainer.innerHTML = '';
+            resultsContainer.style.display = 'none';
+            return;
+        }
+
+        const filtered = this.state.products.filter(p =>
+            (p.name || '').toLowerCase().includes(query) ||
+            (p.designer || '').toLowerCase().includes(query) ||
+            (p.category || '').toLowerCase().includes(query)
+        ).slice(0, 6);
+
+        if (filtered.length === 0) {
+            resultsContainer.innerHTML = '<div style="padding: 15px; font-size: 11px; font-weight: 700; text-align: center;">KHÔNG TÌM THẤY SẢN PHẨM</div>';
+            resultsContainer.style.display = 'block';
+            return;
+        }
+
+        resultsContainer.innerHTML = filtered.map(p => `
+            <div class="search-result-item" onclick="app.viewProduct(${p.id}); document.getElementById('header-search-results').innerHTML = ''; document.getElementById('header-search-results').style.display = 'none'; document.getElementById('header-search-input').value = '';">
+                <img src="${p.image}" alt="${p.name}" style="width: 40px; height: 50px; object-fit: cover; border-radius: 4px; border: 1.5px solid #000; box-shadow: 2px 2px 0px #000;">
+                <div class="search-result-info" style="display: flex; flex-direction: column; justify-content: center; text-align: left; margin-left: 12px;">
+                    <h4 style="font-size: 10px; font-weight: 900; text-transform: uppercase; margin: 0; letter-spacing: 0.5px;">${p.designer}</h4>
+                    <p style="font-size: 11px; margin: 4px 0 0 0; color: #444; font-weight: 700;">${p.name}</p>
+                    <p style="font-size: 11px; font-weight: 900; margin: 4px 0 0 0; color: #FF2D85;">$${p.price}</p>
+                </div>
+            </div>
+        `).join('');
+        resultsContainer.style.display = 'block';
     },
 
     viewProduct(id) {
@@ -358,6 +355,9 @@ const app = {
             case 'cart':
                 this.renderCart();
                 break;
+            case 'buyer-tracking':
+                this.renderBuyerTracking();
+                break;
             case 'seller-dashboard':
                 this.renderSellerDashboard();
                 break;
@@ -378,54 +378,72 @@ const app = {
     },
 
     renderHome() {
-        // Pick one representative product from each category for the home page showcase
-        const featuredProducts = [
-            this.state.products.find(p => p.category === 'Apparel'),
-            this.state.products.find(p => p.category === 'Bags'),
-            this.state.products.find(p => p.category === 'Shoes'),
-            this.state.products.find(p => p.category === 'Accessories')
-        ].filter(p => p);
+        const featuredProducts = this.state.products.slice(0, 12);
 
         this.appRoot.innerHTML = `
-            <section style="position:relative; height:90vh; overflow:hidden; background:#f9f9f9; display:flex; align-items:center; justify-content:center">
-                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(0.6)">
-                <div style="position:relative; text-align:center; color:white; z-index:2; padding:20px" class="reveal">
-                    <h1 style="font-family:var(--font-serif); font-size:clamp(48px, 10vw, 100px); text-transform:uppercase; letter-spacing:15px; margin-bottom:20px; text-shadow:0 10px 30px rgba(0,0,0,0.5)">Thriftzy</h1>
-                    <p style="font-size:clamp(14px, 2vw, 20px); letter-spacing:5px; text-transform:uppercase; margin-bottom:40px">Curated Archives of Luxury</p>
-                    <button class="btn btn--primary" style="background:white; color:black; border-radius:0; padding:18px 50px; font-weight:700; letter-spacing:2px" onclick="app.navigate('collection')">Shop The Archive</button>
+            <section class="hero reveal">
+                <!-- Floating Y2K Stars -->
+                <div class="hero__deco hero__deco--star-1" style="position:absolute; top:12%; left:8%; z-index:1">★</div>
+                <div class="hero__deco hero__deco--star-2" style="position:absolute; bottom:18%; left:48%; z-index:1">✦</div>
+                <div class="hero__deco hero__deco--star-3" style="position:absolute; top:20%; right:8%; z-index:1">★</div>
+
+                <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; width:100%; gap:65px; position:relative; z-index:2">
+                    <div class="hero__content" style="flex:1.1; min-width:300px">
+                        <span class="hero__badge">★ Retro Thrift & Sustainable ★</span>
+                        <h1 style="font-family:var(--font-heading); font-weight:900; line-height:1.1; margin-bottom:20px">THRIFTZY<br>STYLE</h1>
+                        <p style="font-size:14px; margin-bottom:30px; font-weight:700; color:#333; line-height:1.6">Kênh ký gửi & mua sắm thời trang vintage tuyển chọn chất lượng cao. Độc bản - Bền vững - Đậm cá tính Y2K.</p>
+                        <div class="hero__btns">
+                            <button class="btn btn--primary" onclick="app.navigate('collection')">+ SHOP NOW</button>
+                            <button class="btn btn--outline" onclick="app.navigate('seller-dashboard')">+ SELL AN ITEM</button>
+                        </div>
+                    </div>
+                    
+                    <div class="hero__divider-container">
+                        <div class="hero__divider"></div>
+                        <div class="hero__cut-line">
+                            <span class="hero__scissors">✂</span>
+                        </div>
+                        <!-- Additional floating icons in the center -->
+                        <div class="hero__divider-star hero__divider-star--1">✦</div>
+                        <div class="hero__divider-star hero__divider-star--2">★</div>
+                        <div class="hero__divider-star hero__divider-star--3">✿</div>
+                    </div>
+
+                    <div class="hero__image" style="flex:0.9; min-width:300px; display:flex; justify-content:center; position:relative">
+                        <img src="assets/canva/hero-pic.jpg" alt="Thriftzy Y2K Model" style="max-height:510px; width:auto; border:3.5px solid #000; box-shadow:8px 8px 0px #000; border-radius:4px">
+                        <span class="hero__sticker" style="position:absolute; bottom:-12px; right:20px; background:#FF2D85; color:#fff; border:2.5px solid #000; padding:6px 14px; font-size:11px; font-weight:900; transform:rotate(-4deg); box-shadow:4px 4px 0px #000; text-transform:uppercase; z-index:3; letter-spacing:0.5px">★ Y2K ARCHIVAL ★</span>
+                    </div>
                 </div>
             </section>
 
-            <section style="padding:150px 0" class="reveal">
+            <section class="about-section reveal">
                 <div class="container">
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:100px; align-items:center">
-                        <div>
-                            <h2 style="font-family:var(--font-serif); font-size:54px; margin-bottom:30px; line-height:1.1">Heritage<br>Quality<br>Authenticity</h2>
-                            <p style="color:var(--text-light); margin-bottom:40px; font-size:18px">Thriftzy is the premier destination for authenticated luxury resale. Every piece is hand-picked and verified for its heritage and craft.</p>
-                            <a href="#" style="font-size:13px; font-weight:700; text-transform:uppercase; border-bottom:2px solid var(--accent); padding-bottom:8px; color:var(--accent); letter-spacing:2px" onclick="app.navigate('collection')">Discover The Collection</a>
+                    <div class="about-grid">
+                        <div class="about-content">
+                            <h2>ABOUT US</h2>
+                            <p style="font-weight:700; font-size:14px; line-height:1.6; margin-bottom:12px">THRIFTZY là website thời trang second-hand dành cho Gen Z yêu thích phong cách Y2K, sáng tạo và bền vững. Nền tảng không chỉ giúp người dùng mua bán quần áo 2hand dễ dàng và thể hiện cá tính riêng.</p>
+                            <p style="font-weight:700; font-size:14px; line-height:1.6; margin-bottom:12px">Với giao diện lấy cảm hứng từ internet và aesthetic đầu những năm 2000, THRIFTZY mang đến trải nghiệm mua sắm trẻ trung, độc đáo và phù hợp với văn hóa số của giới trẻ Việt Nam.</p>
                         </div>
-                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px">
-                            <div style="aspect-ratio:3/4; overflow:hidden" class="reveal">
-                                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" style="width:100%; height:100%; object-fit:cover; transition:1s ease-in-out" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                            </div>
-                            <div style="aspect-ratio:3/4; overflow:hidden; margin-top:60px" class="reveal">
-                                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" style="width:100%; height:100%; object-fit:cover; transition:1s ease-in-out" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                            </div>
+                        <div class="sustainability-poster">
+                            <span>RE-DUCE</span>
+                            <span>RE-USE</span>
+                            <span>RE-CYCLE</span>
+                            <span>RE-WEAR</span>
+                            <span>RE-REPEAT</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section style="background:#fcfcfc; padding:150px 0">
+            <section style="padding:80px 0">
                 <div class="container">
-                    <div class="section-title reveal" style="text-align:center; margin-bottom:80px">
-                        <h2 style="font-family:var(--font-serif); font-size:42px; text-transform:uppercase; letter-spacing:4px">Featured Archive</h2>
+                    <div class="section-title reveal" style="margin-bottom:60px">
+                        <h2 style="font-family:var(--font-heading); font-size:32px; font-weight:900; text-transform:uppercase; letter-spacing:1px">Marketplace</h2>
+                        <p style="font-size:12px; font-weight:700">Khám phá các sản phẩm độc bản vừa được lên kệ</p>
                     </div>
                     <div class="product-grid">
                         ${featuredProducts.map(p => this.createProductCard(p)).join('')}
                     </div>
-                </div>
-            </section>
 
             <section style="padding:150px 0; text-align:center" class="reveal">
                 <div class="container">
@@ -525,18 +543,18 @@ const app = {
         const isWishlisted = this.isInWishlist(p.id);
 
         this.appRoot.innerHTML = `
-            <div class="container">
+            <div class="container" style="padding-top:40px">
                 <div class="pdp-layout">
                     <div class="pdp-gallery">
-                        <img src="${p.image}" alt="${p.name}">
+                        <img src="${p.image}" alt="${p.name}" style="border:3px solid #000; box-shadow:6px 6px 0px #000; border-radius:4px">
                     </div>
                     <div class="pdp-info-sticky">
                         <div class="pdp-designer">${p.designer || 'Vibe Luxury'}</div>
-                        <h1 class="pdp-name">${p.name}</h1>
-                        <p class="pdp-price">$${p.price.toFixed(2)}</p>
+                        <h1 class="pdp-name" style="font-family:var(--font-heading); font-weight:900">${p.name}</h1>
+                        <p class="pdp-price" style="font-weight:900; font-size:22px">$${p.price.toFixed(2)}</p>
                         
                         <div class="pdp-section">
-                            <h4>Select Size</h4>
+                            <h4 style="font-weight:800; font-size:12px; margin-bottom:12px">SELECT SIZE</h4>
                             <div class="size-selector">
                                 ${(p.sizes || ['One Size']).map(s => `
                                     <div class="size-option ${this.state.selectedSize === s ? 'active' : ''}" 
@@ -546,7 +564,7 @@ const app = {
                         </div>
 
                         <div class="pdp-actions">
-                            <button class="btn btn--primary" onclick="app.addToCart(${p.id})">Add To Bag</button>
+                            <button class="btn btn--primary" onclick="app.addToCart(${p.id})">+ ADD TO BAG</button>
                             <button class="wishlist-btn ${isWishlisted ? 'active' : ''}" onclick="app.toggleWishlist(${p.id})">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.84-8.84 1.06-1.06a5.5 5.5 0 0 0 0-7.78v0z"></path>
@@ -554,18 +572,36 @@ const app = {
                             </button>
                         </div>
 
+                        <button class="msg-seller-btn" style="width:100%; margin-bottom:30px" onclick="app.showToast('✉ Tính năng nhắn tin đang được kết nối với người bán!')">
+                            ✉ NHẮN TIN CHO NGƯỜI BÁN
+                        </button>
+
+                        <div class="faults-section">
+                            <div class="faults-title">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                                TÌNH TRẠNG SẢN PHẨM / FAULTS & FLAWS
+                            </div>
+                            <ul class="fault-list">
+                                ${(p.faults && p.faults.length > 0) ? p.faults.map(f => `<li>${f}</li>`).join('') : `<li>Không có lỗi đáng kể (Tuyển chọn cực đẹp)</li>`}
+                            </ul>
+                        </div>
+
                         <div class="pdp-details">
                             <details open>
-                                <summary>
-                                    Description <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                <summary style="font-weight:800; font-size:12px">
+                                    DESCRIPTION <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </summary>
                                 <div class="details-content">
                                     <p>${p.description}</p>
                                 </div>
                             </details>
                             <details>
-                                <summary>
-                                    Size & Fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                <summary style="font-weight:800; font-size:12px">
+                                    SIZE & FIT <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </summary>
                                 <div class="details-content">
                                     <p>Fits true to size. For more information, please review the size guide.</p>
@@ -575,9 +611,9 @@ const app = {
                     </div>
                 </div>
 
-                <section class="related-products">
+                <section class="related-products" style="margin-top:80px; padding-bottom:80px">
                     <div class="section-title">
-                        <h2>You May Also Like</h2>
+                        <h2 style="font-family:var(--font-heading); font-size:28px; font-weight:900; text-transform:uppercase">You May Also Like</h2>
                     </div>
                     <div class="product-grid">
                         ${this.state.products.slice(0, 4).map(p => this.createProductCard(p)).join('')}
@@ -613,100 +649,134 @@ const app = {
     renderCart() {
         const total = this.state.cart.reduce((sum, item) => sum + item.price, 0);
 
-        let cartContent = `
-            <div class="container" style="padding:100px 0; text-align:center">
-                <h2 style="font-family:var(--font-serif); font-size:32px; margin-bottom:20px">Your Bag is Empty</h2>
-                <p style="color:var(--text-light); margin-bottom:40px">Explore our curated archive to find your next piece.</p>
-                <button class="btn btn--primary" onclick="app.navigate('collection')">Start Shopping</button>
-            </div>
-        `;
+        if (this.state.cart.length === 0) {
+            this.appRoot.innerHTML = `
+                <div class="container" style="padding:100px 20px; text-align:center; animation:fadeIn 0.8s ease">
+                    <h2 style="font-family:var(--font-heading); font-size:32px; font-weight:900; margin-bottom:20px">GIỎ HÀNG TRỐNG</h2>
+                    <p style="color:var(--text-light); margin-bottom:40px; font-size:12px; font-weight:700">Explore our curated archive to find your next piece.</p>
+                    <button class="btn btn--primary" onclick="app.navigate('collection')">+ BẮT ĐẦU MUA SẮM / SHOP NOW</button>
+                </div>
+            `;
+            return;
+        }
 
-        if (this.state.cart.length > 0) {
-            cartContent = `
+        this.appRoot.innerHTML = `
+            <div class="container" style="padding:60px 20px 100px; animation:fadeIn 0.8s ease">
                 <div class="cart-layout">
                     <div>
-                        <h2 class="cart-title">Shopping Bag</h2>
+                        <h2 class="cart-title" style="font-family:var(--font-heading); font-weight:900; text-transform:uppercase; margin-bottom:30px">GIỎ HÀNG / SHOPPING BAG</h2>
                         <div class="cart-items-list">
                             ${this.state.cart.map((item, index) => `
-                                <div class="cart-item">
-                                    <img src="${item.image}" alt="${item.name}">
-                                    <div class="cart-item-info">
-                                        <div class="cart-item-header">
+                                <div class="cart-item" style="border:3px solid #000; box-shadow:4px 4px 0px #000; border-radius:4px; padding:15px; background:var(--white); margin-bottom:20px; display:flex; gap:20px; align-items:center">
+                                    <img src="${item.image}" alt="${item.name}" style="width:90px; height:110px; object-fit:cover; border:2px solid #000; box-shadow:2px 2px 0px #000; border-radius:2px">
+                                    <div class="cart-item-info" style="flex:1">
+                                        <div class="cart-item-header" style="display:flex; justify-content:space-between; align-items:flex-start">
                                             <div>
-                                                <h3 class="cart-item-name">${item.name}</h3>
-                                                <p class="cart-item-designer">${item.designer}</p>
-                                                <p class="cart-item-size">Size: ${item.selectedSize || 'One Size'}</p>
+                                                <h3 class="cart-item-name" style="font-size:15px; font-family:var(--font-heading); font-weight:900; margin:0">${item.name}</h3>
+                                                <p class="cart-item-designer" style="font-size:11px; font-weight:700; color:#555; text-transform:uppercase; margin:4px 0">${item.designer}</p>
+                                                <p class="cart-item-size" style="font-size:11px; color:#777; font-weight:700; margin:0">Size: ${item.selectedSize || 'One Size'}</p>
                                             </div>
-                                            <button class="remove-btn" onclick="app.removeFromCart(${index})">Remove</button>
+                                            <button class="remove-btn" style="background:none; border:none; color:#FF2D85; font-size:11px; font-weight:900; cursor:pointer; text-transform:uppercase; letter-spacing:0.5px" onclick="app.removeFromCart(${index})">[ XÓA ]</button>
                                         </div>
-                                        <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                                        <p class="cart-item-price" style="font-size:15px; font-weight:900; color:#000; margin-top:10px">$${item.price.toFixed(2)}</p>
                                     </div>
                                 </div>
                             `).join('')}
                         </div>
                     </div>
 
-                    <aside class="cart-summary">
-                        <h3 class="summary-title">Order Summary</h3>
-                        <div class="summary-row">
-                            <span>Subtotal</span>
+                    <aside class="cart-summary" style="border:3px solid #000; box-shadow:6px 6px 0px #000; border-radius:4px; padding:30px; background:var(--white); height:fit-content">
+                        <h3 class="summary-title" style="font-family:var(--font-heading); font-weight:900; text-transform:uppercase; border-bottom:2px solid #000; padding-bottom:15px; margin-bottom:20px">TÓM TẮT ĐƠN HÀNG</h3>
+                        <div class="summary-row" style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:12px; font-weight:700">
+                            <span>Tạm tính (Subtotal)</span>
                             <span>$${total.toFixed(2)}</span>
                         </div>
-                        <div class="summary-row">
-                            <span>Shipping</span>
-                            <span>Complimentary</span>
+                        <div class="summary-row" style="display:flex; justify-content:space-between; margin-bottom:20px; font-size:12px; font-weight:700">
+                            <span>Vận chuyển (Shipping)</span>
+                            <span style="color:#00B259; font-weight:800">Complimentary</span>
                         </div>
-                        <div class="summary-row total">
-                            <span>Total</span>
+                        <div class="summary-row total" style="display:flex; justify-content:space-between; border-top:2px solid #000; padding-top:15px; font-weight:900; font-size:16px">
+                            <span>Tổng cộng (Total)</span>
                             <span>$${total.toFixed(2)}</span>
                         </div>
-                        <button class="btn btn--primary" style="width:100%; margin-top:24px" onclick="app.handleCheckout()">Proceed to Checkout</button>
+                        <button class="btn btn--primary" style="width:100%; margin-top:30px; padding:15px 0" onclick="app.handleCheckout()">+ THANH TOÁN / CHECKOUT</button>
                     </aside>
                 </div>
+            </div>
+        `;
+    },
+
+    renderBuyerTracking() {
+        const root = document.getElementById('app-root');
+        
+        if (this.state.orders.length === 0) {
+            root.innerHTML = `
+                <div class="container" style="padding:100px 20px; text-align:center; animation:fadeIn 0.8s ease">
+                    <div style="font-size:60px; margin-bottom:20px">📦</div>
+                    <h2 style="font-family:var(--font-heading); font-size:32px; font-weight:900; margin-bottom:20px">CHƯA CÓ ĐƠN HÀNG NÀO</h2>
+                    <p style="color:var(--text-light); margin-bottom:40px; font-size:12px; font-weight:700">Explore our curated collection to start tracking your purchases!</p>
+                    <button class="btn btn--primary" onclick="app.navigate('collection')">+ BẮT ĐẦU MUA SẮM</button>
+                </div>
             `;
+            return;
         }
 
-        this.appRoot.innerHTML = `
-            <div class="container" style="padding-top:60px">
-                ${cartContent}
+        root.innerHTML = `
+            <div class="container" style="padding:60px 20px 100px; animation:fadeIn 0.8s ease">
+                <div class="section-title reveal" style="margin-bottom:60px">
+                    <h2 style="font-family:var(--font-heading); font-size:32px; font-weight:900; text-transform:uppercase; letter-spacing:1px">THEO DÕI ĐƠN HÀNG</h2>
+                    <p style="font-size:12px; font-weight:700">Trạng thái vận chuyển các đơn hàng của bạn</p>
+                </div>
 
-                <!-- Order Tracking Section -->
-                ${this.state.orders.length > 0 ? `
-                <div id="order-tracking-section" style="margin-top:80px; border-top:1px solid var(--border); padding-top:60px; margin-bottom:100px">
-                    <div class="section-title">
-                        <h2 style="font-family:var(--font-serif); font-size:32px">Order Tracking</h2>
-                        <p>Real-time status of your archive acquisitions.</p>
-                    </div>
-                    <div style="display:grid; gap:20px; max-width:900px">
-                        ${this.state.orders.map(order => `
-                            <div class="order-card" style="display:flex; align-items:center; gap:30px; padding:20px; border:1px solid var(--border); background:var(--white)">
-                                <img src="${order.image}" style="width:100px; height:120px; object-fit:cover; background:#f9f9f9">
-                                <div style="flex:1">
-                                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px">
-                                        <div>
-                                            <span style="font-size:11px; font-weight:700; color:var(--text-light); text-transform:uppercase; letter-spacing:1px">${order.id}</span>
-                                            <h3 style="font-size:18px; font-family:var(--font-serif); margin:4px 0">${order.productName}</h3>
-                                            <p style="font-size:13px; color:var(--text-light)">Size: ${order.selectedSize} | Date: ${order.date}</p>
-                                        </div>
-                                        <div style="text-align:right">
-                                            <span class="status-badge" style="background:${order.status === 'Shipping' ? '#E3F2FD' : '#F5F5F5'}; color:${order.status === 'Shipping' ? '#1976D2' : '#666'}; padding:4px 12px; border-radius:0; font-size:11px; font-weight:700; text-transform:uppercase">${order.status}</span>
-                                            <p style="font-weight:700; margin-top:10px">$${order.price.toFixed(2)}</p>
-                                        </div>
+                <div style="display:grid; gap:40px; max-width:900px; margin:0 auto">
+                    ${this.state.orders.map(order => {
+                        let progressWidth = '10%';
+                        if (order.status === 'Packing') progressWidth = '40%';
+                        if (order.status === 'Shipped') progressWidth = '70%';
+                        if (order.status === 'Shipping') progressWidth = '70%';
+                        if (order.status === 'Delivered') progressWidth = '100%';
+
+                        return `
+                            <div class="order-card reveal" style="border:3px solid #000; box-shadow:6px 6px 0px #000; background:var(--white); padding:30px; display:flex; flex-direction:column; gap:25px; border-radius:4px">
+                                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; border-bottom:2px solid #000; padding-bottom:15px; gap:15px">
+                                    <div>
+                                        <span style="font-size:11px; font-weight:900; background:var(--accent); color:#000; padding:4px 8px; border:1.5px solid #000; box-shadow:2px 2px 0px #000; text-transform:uppercase">${order.id}</span>
+                                        <span style="font-size:11px; font-weight:700; color:#666; margin-left:15px">Ngày đặt: ${order.date}</span>
                                     </div>
-                                    <div style="height:2px; background:#f0f0f0; width:100%; position:relative; margin-top:20px">
-                                        <div style="position:absolute; height:100%; background:var(--accent); width:${order.status === 'Shipping' ? '60%' : '30%'}"></div>
+                                    <div>
+                                        <span class="status-badge" style="background:#000; color:${order.status === 'Delivered' ? '#ABF7B1' : 'var(--accent)'}; padding:6px 16px; border:2px solid #000; font-size:11px; font-weight:900; text-transform:uppercase; box-shadow:2px 2px 0px #000">${order.status}</span>
                                     </div>
-                                    <div style="display:flex; justify-content:space-between; margin-top:10px; font-size:10px; text-transform:uppercase; font-weight:700; letter-spacing:1px; color:var(--text-light)">
-                                        <span>Confirmed</span>
-                                        <span style="color:var(--accent)">Shipping</span>
-                                        <span>Delivered</span>
+                                </div>
+
+                                <div style="display:flex; gap:25px; align-items:center; flex-wrap:wrap">
+                                    <img src="${order.image}" style="width:100px; height:120px; object-fit:cover; border:2px solid #000; box-shadow:3px 3px 0px #000; border-radius:4px">
+                                    <div style="flex:1; min-width:200px">
+                                        <h3 style="font-size:18px; font-family:var(--font-heading); font-weight:900; margin-bottom:8px">${order.productName}</h3>
+                                        <p style="font-size:12px; color:var(--text-light); font-weight:700; margin-bottom:8px">Kích cỡ / Size: ${order.selectedSize}</p>
+                                        <p style="font-size:16px; font-weight:900; color:#000">Tổng cộng: $${order.price.toFixed(2)}</p>
+                                    </div>
+                                </div>
+
+                                <div style="margin-top:15px">
+                                    <div style="height:4px; background:#f0f0f0; border:1.5px solid #000; width:100%; position:relative; border-radius:2px">
+                                        <div style="position:absolute; height:100%; background:var(--accent); width:${progressWidth}; transition: width 0.5s ease"></div>
+                                        
+                                        <div style="position:absolute; top:-6px; left:10%; width:16px; height:16px; border-radius:50%; border:2px solid #000; background:${progressWidth !== '10%' ? 'var(--accent)' : '#fff'}; box-shadow:1px 1px 0px #000"></div>
+                                        <div style="position:absolute; top:-6px; left:40%; width:16px; height:16px; border-radius:50%; border:2px solid #000; background:${progressWidth === '40%' || progressWidth === '70%' || progressWidth === '100%' ? 'var(--accent)' : '#fff'}; box-shadow:1px 1px 0px #000"></div>
+                                        <div style="position:absolute; top:-6px; left:70%; width:16px; height:16px; border-radius:50%; border:2px solid #000; background:${progressWidth === '70%' || progressWidth === '100%' ? 'var(--accent)' : '#fff'}; box-shadow:1px 1px 0px #000"></div>
+                                        <div style="position:absolute; top:-6px; left:100%; width:16px; height:16px; border-radius:50%; border:2px solid #000; background:${progressWidth === '100%' ? 'var(--accent)' : '#fff'}; box-shadow:1px 1px 0px #000; transform:translateX(-8px)"></div>
+                                    </div>
+                                    <div style="display:flex; justify-content:space-between; margin-top:15px; font-size:9px; text-transform:uppercase; font-weight:800; letter-spacing:0.5px; color:var(--text-light)">
+                                        <span style="color:#000">Đã xác nhận<br>(Confirmed)</span>
+                                        <span style="${order.status === 'Packing' ? 'color:#000' : ''}">Đang chuẩn bị<br>(Packing)</span>
+                                        <span style="${order.status === 'Shipped' || order.status === 'Shipping' ? 'color:#000' : ''}">Đang giao<br>(Shipping)</span>
+                                        <span style="${order.status === 'Delivered' ? 'color:#000' : ''}; text-align:right">Đã nhận<br>(Delivered)</span>
                                     </div>
                                 </div>
                             </div>
-                        `).join('')}
-                    </div>
+                        `;
+                    }).join('')}
                 </div>
-                ` : ''}
             </div>
         `;
     },
