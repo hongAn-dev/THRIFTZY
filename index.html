@@ -1,39 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THRIFTZY | Retro Thrift & Sustainable Fashion</title>
+    <title>THRIFTZY | Đồ cũ Retro & Thời trang Bền vững</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="#" onclick="app.navigate('home')">Home</a>
-                <a href="#" onclick="app.navigate('collection')">Shop</a>
-                <a href="#" onclick="app.navigate('buyer-tracking')">Tracking</a>
-                <a href="#" onclick="app.navigate('seller-dashboard')">Seller</a>
+                <a href="#" onclick="app.navigate('home')">Trang chủ</a>
+                <a href="#" onclick="app.navigate('collection')">Cửa hàng</a>
+                <a href="#" onclick="app.navigate('buyer-tracking')">Theo dõi đơn</a>
+                <a href="#" onclick="app.navigate('seller-dashboard')">Kênh Người bán</a>
             </nav>
-            
+
             <!-- STYLIZED THRIFTZY STYLE LOGO -->
             <div class="logo-container" onclick="app.navigate('home')">
                 <svg viewBox="0 0 300 100" class="thriftzy-logo">
                     <!-- Top Star -->
-                    <path d="M150,5 L153,15 L164,15 L155,21 L159,31 L150,25 L141,31 L145,21 L136,15 L147,15 Z" fill="#F3CDDC" stroke="#000" stroke-width="2"/>
+                    <path d="M150,5 L153,15 L164,15 L155,21 L159,31 L150,25 L141,31 L145,21 L136,15 L147,15 Z"
+                        fill="#F3CDDC" stroke="#000" stroke-width="2" />
                     <!-- THRIFTZY bubble outline shadow -->
-                    <text x="153" y="60" font-family="'Lexend Exa', sans-serif" font-size="30" font-weight="900" text-anchor="middle" fill="#000" letter-spacing="1">THRIFTZY</text>
+                    <text x="153" y="60" font-family="'Lexend Exa', sans-serif" font-size="30" font-weight="900"
+                        text-anchor="middle" fill="#000" letter-spacing="1">THRIFTZY</text>
                     <!-- THRIFTZY bubble text -->
-                    <text x="150" y="57" font-family="'Lexend Exa', sans-serif" font-size="30" font-weight="900" text-anchor="middle" fill="#FCF6FA" stroke="#000" stroke-width="2" paint-order="stroke fill" letter-spacing="1">THRIFTZY</text>
+                    <text x="150" y="57" font-family="'Lexend Exa', sans-serif" font-size="30" font-weight="900"
+                        text-anchor="middle" fill="#FCF6FA" stroke="#000" stroke-width="2" paint-order="stroke fill"
+                        letter-spacing="1">THRIFTZY</text>
                     <!-- Banner for STYLE -->
-                    <rect x="90" y="68" width="120" height="22" rx="4" fill="#000" stroke="#FCF6FA" stroke-width="1.5"/>
-                    <text x="150" y="84" font-family="'Lexend Exa', sans-serif" font-size="11" font-weight="800" text-anchor="middle" fill="#F3CDDC" letter-spacing="2">STYLE</text>
+                    <rect x="90" y="68" width="120" height="22" rx="4" fill="#000" stroke="#FCF6FA"
+                        stroke-width="1.5" />
+                    <text x="150" y="84" font-family="'Lexend Exa', sans-serif" font-size="11" font-weight="800"
+                        text-anchor="middle" fill="#F3CDDC" letter-spacing="2">STYLE</text>
                     <!-- Stars beside banner -->
-                    <path d="M75,74 L77,79 L82,79 L78,82 L80,87 L75,84 L70,87 L72,82 L68,79 L73,79 Z" fill="#F3CDDC" stroke="#000" stroke-width="1"/>
-                    <path d="M225,74 L227,79 L232,79 L228,82 L230,87 L225,84 L220,87 L222,82 L218,79 L223,79 Z" fill="#F3CDDC" stroke="#000" stroke-width="1"/>
+                    <path d="M75,74 L77,79 L82,79 L78,82 L80,87 L75,84 L70,87 L72,82 L68,79 L73,79 Z" fill="#F3CDDC"
+                        stroke="#000" stroke-width="1" />
+                    <path d="M225,74 L227,79 L232,79 L228,82 L230,87 L225,84 L220,87 L222,82 L218,79 L223,79 Z"
+                        fill="#F3CDDC" stroke="#000" stroke-width="1" />
                 </svg>
             </div>
 
@@ -41,25 +52,34 @@
             <div class="header-right">
                 <!-- HEADER SEARCH BAR (PINK BACKGROUND) -->
                 <div class="header-search-container">
-                    <input type="text" id="header-search-input" placeholder="THANH TÌM KIẾM..." oninput="app.handleHeaderSearchInput(event)">
-                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="header-search-input" placeholder="THANH TÌM KIẾM..."
+                        oninput="app.handleHeaderSearchInput(event)">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000"
+                        stroke-width="2.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
                     <div id="header-search-results" class="header-search-results"></div>
                 </div>
 
                 <div class="header-actions">
                     <!-- RETRO PINK HEART ICON -->
-                    <button class="icon-btn" aria-label="Wishlist" onclick="app.navigate('wishlist')">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#F3CDDC" stroke="#000" stroke-width="2" stroke-linejoin="round">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    <button class="icon-btn" aria-label="Danh sách yêu thích" onclick="app.navigate('wishlist')">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#F3CDDC" stroke="#000" stroke-width="2"
+                            stroke-linejoin="round">
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                         </svg>
                     </button>
                     <!-- RETRO PINK CART ICON -->
-                    <button class="icon-btn cart-trigger" aria-label="Cart" onclick="app.navigate('cart')">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#F3CDDC" stroke="#000" stroke-width="2" stroke-linejoin="round">
-                            <circle cx="9" cy="21" r="1.5" fill="#000"/>
-                            <circle cx="20" cy="21" r="1.5" fill="#000"/>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" fill="none" stroke="#000" stroke-width="2"/>
-                            <path d="M9 8h10v3H9z" fill="#F3CDDC" stroke="#000" stroke-width="1.5"/>
+                    <button class="icon-btn cart-trigger" aria-label="Giỏ hàng" onclick="app.navigate('cart')">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#F3CDDC" stroke="#000" stroke-width="2"
+                            stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1.5" fill="#000" />
+                            <circle cx="20" cy="21" r="1.5" fill="#000" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" fill="none"
+                                stroke="#000" stroke-width="2" />
+                            <path d="M9 8h10v3H9z" fill="#F3CDDC" stroke="#000" stroke-width="1.5" />
                         </svg>
                         <span class="cart-count">0</span>
                     </button>
@@ -71,7 +91,8 @@
     <div id="search-overlay" class="search-overlay">
         <div class="search-overlay__content">
             <button class="search-overlay__close" onclick="app.toggleSearch()">&times;</button>
-            <input type="text" id="search-input" placeholder="Search designers, products, categories..." oninput="app.handleSearchInput(event)">
+            <input type="text" id="search-input" placeholder="Tìm kiếm nhà thiết kế, sản phẩm, danh mục..."
+                oninput="app.handleSearchInput(event)">
             <div id="search-results" class="search-results"></div>
         </div>
     </div>
@@ -81,33 +102,36 @@
     </main>
 
     <!-- Floating Action Button for Seller -->
-    <button class="fab" onclick="app.navigate('post-form')" aria-label="Post Item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    <button class="fab" onclick="app.navigate('post-form')" aria-label="Đăng sản phẩm">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
     </button>
 
     <footer class="footer">
         <div class="container footer__content">
             <div class="footer__brand">
                 <div class="footer__logo">THRIFTZY</div>
-                <p>Premium curation of pre-loved high fashion. Authentic, sustainable, and intentionally designed.</p>
+                <p>Tuyển chọn cao cấp thời trang secondhand hàng hiệu. Chính hãng, bền vững và được thiết kế tinh tế.</p>
             </div>
             <div class="footer__links">
                 <div class="footer__col">
-                    <h4>Shop</h4>
-                    <a href="#" onclick="app.navigate('collection')">New Arrivals</a>
-                    <a href="#" onclick="app.navigate('collection')">Designer Bags</a>
-                    <a href="#" onclick="app.navigate('collection')">Vintage Shoes</a>
-                    <a href="#" onclick="app.navigate('collection')">Archive Apparel</a>
+                    <h4>Cửa hàng</h4>
+                    <a href="#" onclick="app.navigate('collection')">Hàng mới về</a>
+                    <a href="#" onclick="app.navigate('collection')">Túi xách Hàng hiệu</a>
+                    <a href="#" onclick="app.navigate('collection')">Giày Vintage</a>
+                    <a href="#" onclick="app.navigate('collection')">Trang phục Lưu trữ</a>
                 </div>
                 <div class="footer__col">
-                    <h4>Support</h4>
-                    <a href="#">Shipping & Returns</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Privacy Policy</a>
+                    <h4>Hỗ trợ</h4>
+                    <a href="#">Vận chuyển & Trả hàng</a>
+                    <a href="#">Liên hệ</a>
+                    <a href="#">Điều khoản Dịch vụ</a>
+                    <a href="#">Chính sách Bảo mật</a>
                 </div>
                 <div class="footer__col">
-                    <h4>Follow Us</h4>
+                    <h4>Theo dõi</h4>
                     <div class="social-links">
                         <a href="#">Instagram</a>
                         <a href="#">TikTok</a>
@@ -117,10 +141,11 @@
             </div>
         </div>
         <div class="container footer__bottom">
-            <p>&copy; 2026 THRIFTZY. ALL RIGHTS RESERVED.</p>
+            <p>&copy; 2026 THRIFTZY. BẢN QUYỀN ĐÃ ĐƯỢC BẢO HỘ.</p>
         </div>
     </footer>
 
     <script src="app.js"></script>
 </body>
+
 </html>

@@ -84,8 +84,8 @@ body {
 }
 
 .header .container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     width: 100%;
 }
@@ -96,14 +96,15 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    left: auto;
+    transform: none;
     transition: var(--transition);
+    justify-self: center;
 }
 
 .logo-container:hover {
-    transform: translateX(-50%) scale(1.05);
+    transform: scale(1.05);
 }
 
 .thriftzy-logo {
@@ -116,6 +117,7 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
+    justify-self: end;
 }
 
 /* Header Search Container */
@@ -207,7 +209,7 @@ body {
 
 .nav {
     display: flex;
-    gap: 40px;
+    gap: 25px;
 }
 
 .nav a {
@@ -897,7 +899,7 @@ button {
 }
 
 /* Hero Section */
-.hero {
+.hero, .aboutUs {
     display: flex;
     align-items: center;
     min-height: calc(100vh - var(--header-height));
@@ -909,6 +911,10 @@ button {
     position: relative;
     overflow: hidden;
     border-bottom: 3px solid #000;
+}
+
+.aboutUs {
+    background-color: #F3CDDC;
 }
 
 /* Y2K Floating Decorations */
@@ -1808,17 +1814,14 @@ button {
 }
 
 /* Responsive Design (Mobile Only) - ALWAYS AT THE END */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
-    }
-
+@media (max-width: 1024px) {
     .header {
         height: auto;
         padding: 15px 0;
     }
 
     .header .container {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 12px;
@@ -1865,6 +1868,7 @@ button {
         gap: 15px;
         width: 100%;
         flex-wrap: wrap;
+        justify-self: center;
     }
 
     .header-search-container {
@@ -1874,6 +1878,12 @@ button {
 
     .header-actions {
         gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
     }
 
     .hero {
