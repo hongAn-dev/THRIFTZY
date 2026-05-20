@@ -549,13 +549,20 @@ const app = {
                         <div class="pdp-designer">${p.designer || 'Kho Lưu Trữ'}</div>
                         <h1 class="pdp-name" style="font-family:var(--font-heading); font-weight:900">${p.name}</h1>
                         <p class="pdp-price" style="font-weight:900; font-size:22px; margin-bottom: 10px">${this.formatPrice(p.price)}</p>
-                        <p class="pdp-location" style="font-size: 13px; color: #888888; display: flex; align-items: center; gap: 6px; margin-top: -5px; margin-bottom: 25px; font-weight: 500; font-family: var(--font-sans);">
+                        <p class="pdp-location" style="font-size: 13px; color: #888888; display: flex; align-items: center; gap: 6px; margin-top: -5px; margin-bottom: 20px; font-weight: 500; font-family: var(--font-sans);">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #999999; flex-shrink: 0;">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
                             Khu vực: ${p.location || 'Hồ Chí Minh'}
                         </p>
+
+                        <div class="pdp-size" style="font-size: 13px; font-weight: 800; margin-bottom: 25px; font-family: var(--font-sans); text-transform: uppercase; display: flex; align-items: center; gap: 8px;">
+                            <span>KÍCH CỠ:</span>
+                            <span style="background: var(--accent); color: #000; padding: 6px 12px; border: 3px solid #000; box-shadow: 3px 3px 0px #000; font-size: 13px; font-weight: 900; border-radius: 4px; display: inline-block;">
+                                ${p.sizes ? p.sizes.join(', ') : 'Một kích cỡ'}
+                            </span>
+                        </div>
 
                         <div class="pdp-actions">
                             <button class="btn btn--primary" onclick="app.addToCart(${p.id})">+ THÊM VÀO GIỎ HÀNG</button>
@@ -591,15 +598,6 @@ const app = {
                                 </summary>
                                 <div class="details-content">
                                     <p>${p.description}</p>
-                                </div>
-                            </details>
-                            <details>
-                                <summary style="font-weight:800; font-size:12px">
-                                    KÍCH CỠ & FORM DÁNG <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                                </summary>
-                                <div class="details-content">
-                                    <p style="margin-bottom:8px"><strong>Kích cỡ:</strong> ${p.sizes ? p.sizes.join(', ') : 'Một kích cỡ'}</p>
-                                    <p><strong>Form dáng:</strong> ${p.fit || 'Form dáng chuẩn, tôn dáng, dễ phối đồ.'}</p>
                                 </div>
                             </details>
                         </div>
