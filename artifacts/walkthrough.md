@@ -1,76 +1,50 @@
-# 🚀 THRIFTZY Neobrutalist Web App Redesign Walkthrough
+# 👑 Cập Nhật Danh Mục Chỉ Bán Quần Áo - THRIFTZY Walkthrough
 
-We have successfully implemented and verified the entire set of custom customer requirements for the **THRIFTZY** vintage archive second-hand web application! The platform is now fully populated with the **12 official Y2K fashion items** curated directly from the customer's Google Sheet, and is updated with the official Vietnamese brand introduction narrative.
-
-Below is the complete visual showcase and detailed breakdown of each implemented feature and page view.
+Chúng tôi đã thực hiện cập nhật toàn diện cho ứng dụng web **THRIFTZY** để chuyển đổi sang mô hình chuyên biệt chỉ bán quần áo (váy, đầm, áo, quần, áo khoác), loại bỏ hoàn toàn các danh mục không liên quan như túi xách, giày dép và phụ kiện theo đúng yêu cầu của bạn.
 
 ---
 
-## 📺 Complete Flow Browser Recording
-Here is the recorded user flow session showcasing the interactive catalog browsing, the newly separated Shopping Bag and Order Tracking flows, and clean autocomplete search:
+## 🛠️ Các thay đổi chi tiết đã thực hiện
 
-![Thriftzy Interactive Session Walkthrough](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/y2k_catalog_live_check_1779013874366.webp)
+### 1. Cập Nhật Hệ Thống Danh Mục (Categories) chuyên quần áo
+Trong file `app.js`, chúng tôi đã định nghĩa lại danh sách danh mục và nhãn hiển thị:
+- **Trước đây:** `Tất cả`, `Quần áo`, `Túi xách`, `Giày dép`, `Phụ kiện`
+- **Hiện tại:**
+  - `All`: **Tất cả sản phẩm**
+  - `Dresses`: **Váy**
+  - `Tops`: **Áo**
+  - `Pants`: **Quần**
+  - `Outerwear`: **Áo khoác**
 
----
+### 2. Cập Nhật Dữ Liệu 12 Sản Phẩm Mặc Định
+Toàn bộ 12 sản phẩm mặc định (đều là quần áo) đã được phân loại chính xác vào các danh mục thời trang mới thay vì nhãn chung `Apparel`:
+- **Áo Hai Dây Ren Nâu Y2K**, **Áo Cổ Yếm Sọc Đỏ Trắng**, **Áo Cổ Yếm Nhún Bèo Màu Rêu** -> Phân loại vào danh mục `Tops` (Áo).
+- **Đầm Chữ A Ánh Nhũ Đen**, **Đầm Cổ Yếm Linen Xám Tro**, **Đầm Cổ Yếm Denim Thêu Họa Tiết**, **Đầm Chấm Bi Dáng Babydoll**, **Đầm Hai Dây Hoa Nhí Nâu Chocolate**, **Đầm Ngủ Satin Phối Ren Đen** -> Phân loại vào danh mục `Dresses` (Váy).
+- **Quần Jean Ống Loe Wash Sáng**, **Quần Jean Ống Loe Gân Giữa Wash Tối**, **Quần Jean Ống Loe Wash Điển Hình** -> Phân loại vào danh mục `Pants` (Quần).
 
-## 📸 Component Showcase Carousel: Homepage & Catalog
-Explore the verified visual states of the homepage and the updated 12-item catalog:
+### 3. Đồng Bộ Trình Chọn Khi Đăng Bán Sản Phẩm Mới (Post Form)
+Trình chọn danh mục ở trang **Đăng bán sản phẩm mới** đã được cập nhật đồng bộ giúp người bán dễ dàng chọn đúng loại trang phục:
+```html
+<select class="form-control" name="category" required>
+    <option value="Dresses">Váy</option>
+    <option value="Tops">Áo các loại</option>
+    <option value="Pants">Quần</option>
+    <option value="Outerwear">Áo khoác</option>
+</select>
+```
 
-````carousel
-![1. Homepage Hero View](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/homepage_hero_view_1779013889779.png)
-<!-- slide -->
-![2. Vietnamese About Us Copy](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/homepage_about_us_1779013897290.png)
-<!-- slide -->
-![3. Y2K Catalog Row 1 (Items 1-4)](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/homepage_products_row1_1779013910639.png)
-<!-- slide -->
-![4. Y2K Catalog Row 2 (Items 5-8)](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/homepage_products_row2_1779013917398.png)
-<!-- slide -->
-![5. Y2K Catalog Row 3 (Items 9-12)](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/homepage_products_row3_1779013926565.png)
-````
+### 4. Tối Ưu Link Điều Hướng Tại Footer
+Trong file `index.html`, các đường link điều hướng nhanh tại footer đã được chuyển từ túi xách/giày dép sang các danh mục quần áo:
+- **Túi xách Hàng hiệu** -> **Váy Vintage** (Tự động lọc danh mục `Dresses`)
+- **Giày Vintage** -> **Áo Retro** (Tự động lọc danh mục `Tops`)
+- **Trang phục Lưu trữ** -> **Quần & Denim** (Tự động lọc danh mục `Pants`)
 
----
-
-## 🛍️ Component Showcase Carousel: Separated E-Commerce Pages
-THRIFTZY now separates layout-heavy pages like the Shopping Bag, Order Tracking, and Seller Dashboards to prevent style conflicts and double container bugs.
-
-````carousel
-![1. Interactive Product Detail Page (PDP)](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/product_detail_page_1779013326138.png)
-<!-- slide -->
-![2. Separated Shopping Bag Page](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/shopping_bag_page_1779013353036.png)
-<!-- slide -->
-![3. Separated Buyer Order Tracking Page](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/buyer_tracking_page_1779013381923.png)
-<!-- slide -->
-![4. Redesigned Seller Dashboard Page](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/seller_dashboard_page_1779013392228.png)
-<!-- slide -->
-![5. List New Item Form](C:/Users/ANADMIN/.gemini/antigravity/brain/89173734-f453-46c2-b6d8-36810fb24156/artifacts/list_new_item_page_1779013402382.png)
-````
-
----
-
-## 🛠️ Detailed Breakdown of Implementation
-
-### 1. Catalog Overhaul (12 Curated Y2K Products)
-We have completely replaced the hardcoded placeholder products array inside `app.js` with the 12 premium vintage second-hand clothing items requested from the client's Google Sheet:
-* **Hybrid Price Display:** Price tags are aesthetically listed in USD ($12.00 to $25.00) to keep the premium Y2K web aesthetic intact, with the exact Vietnamese local currency equivalent (e.g. *125.000đ*) embedded directly inside each product's detail text.
-* **Exact Size and Imperfections Mapping:** Hand-mapped exact size ratings (e.g., `eo 56-58`, `Size: M`) and item wear ratings (e.g., `9.5/10, ren còn nguyên không bị rút sợi`) to the corresponding lists in the catalog.
-* **Flawless Image Load:** Direct image linking ensures instant load times with zero placeholder indicators.
-
-### 2. Official Vietnamese "About Us" Narrative
-Replaced the template bulleted items with the official brand story:
-> *"THRIFTZY là website thời trang second-hand dành cho Gen Z yêu thích phong cách Y2K, sáng tạo và bền vững. Nền tảng không chỉ giúp người dùng mua bán quần áo 2hand dễ dàng và thể hiện cá tính riêng. Với giao diện lấy cảm hứng từ internet và aesthetic đầu những năm 2000, THRIFTZY mang đến trải nghiệm mua sắm trẻ trung, độc đáo và phù hợp với văn hóa số của giới trẻ Việt Nam."*
-
-### 3. Fully Separated Layouts
-* **Double Padding Fix:** Isolated the Shopping Bag and Order Tracking templates into separate navigation sections in `app.js`.
-* **CSS Cleanliness:** Avoided deep style overrides and global conflicts by nesting styles within unique parent page classes like `.shopping-bag-page` and `.seller-dashboard-page`.
+### 5. Khởi Động Lại Bộ Nhớ Cache Trình Duyệt (Version Bump)
+Chúng tôi đã nâng cấp phiên bản bộ nhớ state của ứng dụng lên `'2.6'` trong `app.js`. Điều này giúp trình duyệt tự động xóa bộ nhớ cache cũ (localStorage) của người dùng cũ để nạp ngay cấu trúc danh mục và phân loại sản phẩm mới mà không bị lỗi hiển thị.
 
 ---
 
-## 📂 File Modifications Reference
+## 📂 Các File Đã Chỉnh Sửa
 
-* **Main JavaScript Controller:** [app.js](file:///d:/Torrent_Doc/Job/Web%202hand/app.js) - Holds the new 12-product Y2K clothing array, official Vietnamese narrative, isolated e-commerce pages, search suggestions, and toast messages.
-* **Style Sheet:** [style.css](file:///d:/Torrent_Doc/Job/Web%202hand/style.css) - Isolated padding container classes, premium Y2K shadows, responsive headers, and neon buttons.
-
----
-
-> [!TIP]
-> All vintage image paths are hosted on high-availability fast image hosting CDNs, ensuring that the THRIFTZY catalog will load instantly for local users.
+1. **[app.js](file:///d:/Torrent_Doc/Job/Web%202hand/app.js):** Cập nhật dữ liệu sản phẩm, cấu trúc danh mục lọc, bộ chọn trong form đăng bán, nâng version ứng dụng.
+2. **[index.html](file:///d:/Torrent_Doc/Job/Web%202hand/index.html):** Cập nhật menu liên kết nhanh ở phần Footer đồng bộ với các danh mục quần áo mới.
